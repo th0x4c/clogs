@@ -97,6 +97,9 @@
   (apply (partial merge-sorted-seq-with-comp #(compare (keyfn %1) (keyfn %2))) colls))
 
 ;; I/O
+(defn file-exists?
+  [file-name]
+  (.exists (new File file-name)))
 
 ;; From clojure.contrib
 ;; http://clojure.github.com/clojure-contrib/duck-streams-api.html#clojure.contrib.duck-streams/read-lines

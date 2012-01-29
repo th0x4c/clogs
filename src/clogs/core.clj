@@ -72,6 +72,10 @@
       (println " $ java -jar clogs-0.0.1-SNAPSHOT-standalone.jar ./log/alert.log ./log/trace.trc ./file/listener.log")
       (println)
       (System/exit 0))
+    (when-let [no-files (not-empty (filter (complement file-exists?) args))]
+      (println "No such file or directory.")
+      (println (apply str (interpose "\n" no-files)))
+      (System/exit 1))
     (with-open [w (writer System/out :encoding clogs-writer-encoding)]
       (let [s (apply str (flatten (file-seq->clogs-strs args :encoding clogs-reader-encoding)))]
         (.write w s)))))

@@ -85,5 +85,9 @@
   (is (= (merge-sorted-seq-by second [[:a 1] [:a 3] [:a 4]] [[:b 2] [:b 3] [:b 5]] [[:c 1] [:c 3] [:c 6]]) [[:a 1] [:c 1] [:b 2] [:a 3] [:b 3] [:c 3] [:a 4] [:b 5] [:c 6]])))
 
 ;; I/O
+(deftest test-file-exists?
+  (is (true? (file-exists? "test/clogs/test/file/alert.log")))
+  (is (false? (file-exists? "test/clogs/test/file/not_exist.file"))))
+
 (deftest test-read-lines
   (is (= (read-lines "test/clogs/test/file/alert.log") alert-log-seq)))
