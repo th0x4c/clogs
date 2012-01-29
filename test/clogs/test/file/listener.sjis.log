@@ -1,0 +1,24 @@
+Sat Jan 14 02:37:23 2012
+System parameter file is C:\oraclexe\app\oracle\product\11.2.0\server\network\admin\listener.ora
+Log messages written to C:\oraclexe\app\oracle\diag\tnslsnr\browning\listener\alert\log.xml
+Trace information written to C:\oraclexe\app\oracle\diag\tnslsnr\browning\listener\trace\ora_500_584.trc
+Trace level is currently 0
+
+pid=500で起動しました
+リスニングしています: (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(PIPENAME=\\.\pipe\EXTPROC1ipc)))
+リスニングしています: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=browning)(PORT=1521)))
+Listener completed notification to CRS on start
+
+TIMESTAMP * CONNECT DATA [* PROTOCOL INFO] * EVENT [* SID] * RETURN CODE
+Sat Jan 14 02:39:08 2012
+Dynamic address is already listened on (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=browning)(PORT=1521)))
+14-1月 -2012 02:39:08 * service_register * xe * 0
+14-1月 -2012 02:39:11 * service_update * xe * 0
+Sat Jan 14 02:39:28 2012
+14-1月 -2012 02:39:28 * service_update * xe * 0
+Sat Jan 14 02:40:10 2012
+14-1月 -2012 02:40:10 * service_update * xe * 0
+14-1月 -2012 02:40:19 * service_update * xe * 0
+Sat Jan 14 02:40:22 2012
+リスニングしています: (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=browning)(PORT=8080))(Presentation=HTTP)(Session=RAW))
+14-1月 -2012 02:40:22 * service_update * xe * 0

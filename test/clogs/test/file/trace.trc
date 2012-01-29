@@ -1,0 +1,23 @@
+Trace file C:\oraclexe\app\oracle\diag\rdbms\xe\xe\trace\xe_ora_780.trc
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - Production
+Windows XP Version V5.1 Service Pack 3 
+CPU                 : 1 - type 586, 1 Physical Cores
+Process Affinity    : 0x0x00000000
+Memory (Avail/Total): Ph:362M/767M, Ph+PgF:988M/1490M, VA:1593M/2047M 
+VM name             : VMWare Version (6)
+Instance name: xe
+Redo thread mounted by this instance: 0 <none>
+Oracle process number: 0
+Windows thread id: 780, image: ORACLE.EXE (SHAD)
+
+
+*** 2012-01-14 02:38:48.187
+kcrfwy: minimum sleep is 26801 usecs (overhead is 0 usecs)
+Running with 1 strand for Non-Enterprise Edition
+Running without dynamic strands for Non-Enterprise Edition
+
+*** 2012-01-14 02:39:08.015
+*** SESSION ID:(1.1) 2012-01-14 02:39:08.015
+*** SERVICE NAME:() 2012-01-14 02:39:08.015
+ 
+DBRM(kskinitrm): cpu_count = 1

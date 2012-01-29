@@ -1,0 +1,78 @@
+Sat Jan 14 02:38:13 2012
+Starting ORACLE instance (normal)
+Sat Jan 14 02:38:38 2012
+LICENSE_MAX_SESSION = 0
+LICENSE_SESSIONS_WARNING = 0
+Picked latch-free SCN scheme 2
+Using LOG_ARCHIVE_DEST_1 parameter default value as USE_DB_RECOVERY_FILE_DEST
+Autotune of undo retention is turned on. 
+IMODE=BR
+ILAT =18
+Sat Jan 14 02:38:50 2012
+LICENSE_MAX_USERS = 0
+SYS auditing is disabled
+Starting up:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - Production.
+Using parameter settings in server-side pfile C:\ORACLEXE\APP\ORACLE\PRODUCT\11.2.0\SERVER\DATABASE\INITXE.ORA
+System parameters with non-default values:
+  sessions                 = 172
+  spfile                   = "C:\ORACLEXE\APP\ORACLE\PRODUCT\11.2.0\SERVER\DBS\SPFILEXE.ORA"
+  memory_target            = 240M
+  control_files            = "C:\ORACLEXE\APP\ORACLE\ORADATA\XE\CONTROL.DBF"
+  compatible               = "11.2.0.0.0"
+  db_recovery_file_dest    = "C:\oraclexe\app\oracle\fast_recovery_area"
+  db_recovery_file_dest_size= 10G
+  undo_management          = "AUTO"
+  undo_tablespace          = "UNDOTBS1"
+  remote_login_passwordfile= "EXCLUSIVE"
+  dispatchers              = "(PROTOCOL=TCP) (SERVICE=XEXDB)"
+  shared_servers           = 4
+  job_queue_processes      = 4
+  audit_file_dest          = "C:\ORACLEXE\APP\ORACLE\ADMIN\XE\ADUMP"
+  db_name                  = "XE"
+  open_cursors             = 300
+  diagnostic_dest          = "C:\ORACLEXE\APP\ORACLE"
+Sat Jan 14 02:39:08 2012
+PMON started with pid=2, OS id=3892 
+Sat Jan 14 02:39:08 2012
+PSP0 started with pid=3, OS id=3896 
+Sat Jan 14 02:39:09 2012
+VKTM started with pid=4, OS id=4072 at elevated priority
+VKTM running at (10)millisec precision with DBRM quantum (100)ms
+Sat Jan 14 02:39:09 2012
+GEN0 started with pid=5, OS id=4076 
+Sat Jan 14 02:39:09 2012
+DIAG started with pid=6, OS id=4080 
+Sat Jan 14 02:39:09 2012
+DBRM started with pid=7, OS id=4084 
+Sat Jan 14 02:39:09 2012
+DIA0 started with pid=8, OS id=4088 
+Sat Jan 14 02:39:09 2012
+MMAN started with pid=9, OS id=4092 
+Sat Jan 14 02:39:09 2012
+DBW0 started with pid=10, OS id=268 
+Sat Jan 14 02:39:09 2012
+LGWR started with pid=11, OS id=264 
+Sat Jan 14 02:39:09 2012
+CKPT started with pid=12, OS id=244 
+Sat Jan 14 02:39:10 2012
+SMON started with pid=13, OS id=172 
+Sat Jan 14 02:39:10 2012
+RECO started with pid=14, OS id=252 
+Sat Jan 14 02:39:10 2012
+MMON started with pid=15, OS id=272 
+Sat Jan 14 02:39:10 2012
+MMNL started with pid=16, OS id=284 
+Sat Jan 14 02:39:10 2012
+starting up 1 dispatcher(s) for network address '(ADDRESS=(PARTIAL=YES)(PROTOCOL=TCP))'...
+starting up 4 shared server(s) ...
+ORACLE_BASE from environment = C:\oraclexe\app\oracle
+Sat Jan 14 02:39:22 2012
+alter database mount exclusive
+Sat Jan 14 02:39:28 2012
+Successful mount of redo thread 1, with mount id 2653644186
+Database mounted in Exclusive Mode
+Lost write protection disabled
+Sat Jan 14 02:39:40 2012
+Completed: alter database mount exclusive
+alter database open
