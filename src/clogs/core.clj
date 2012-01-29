@@ -35,7 +35,7 @@
     (last-n-str fname-len fname)
     (str fname (apply str (repeat (- fname-len (count fname)) " ")))))
 
-(defn clogs-strs
+(defn clogs-seq->strs
   [clgs]
   (letfn [(subf
             [ss]
@@ -56,7 +56,7 @@
   (->> files
        (map #(apply file->clogs-seq (concat [(:date-format (file->style %)) %] opts)))
        (apply merge-clogs-seq)
-       clogs-strs))
+       clogs-seq->strs))
 
 (defn -main [& args]
   (let [[options args banner] (cli args
