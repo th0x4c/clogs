@@ -14,12 +14,13 @@
 (defn file->clogs-seq
   [re-format-vec filename & opts]
   (let [p (clogs-partition re-format-vec (apply read-lines (cons filename opts)))]
-    (map (fn [s] [(date-parse-line re-format-vec (str (first s))) [[filename s]]]) p)))
+    (map (fn [s] {:timestamp (date-parse-line re-format-vec (str (first s)))
+                  :filename filename
+                  :log s}) p)))
 
 (defn merge-clogs-seq
   [& clogs-seqs]
-  (let [clss (apply (partial merge-sorted-seq-by first) clogs-seqs)]
-    (map #(list (first (first %)) (reduce concat (mapcat rest %))) (partition-by first clss))))
+  (apply (partial merge-sorted-seq-by :timestamp) clogs-seqs))
 
 (defn add-only-first-str
   [separator s strs]
@@ -39,13 +40,14 @@
   [clgs]
   (letfn [(subf
             [ss]
-            (let [add-newline (fn [x] (if (empty? x) ["\n"] (map #(str % "\n") x)))
-                  ds (if-let [v (first ss)]
+            (let [ds (if-let [v (:timestamp (first ss))]
                        (date-str "MM-dd HH:mm:ss.SSS" v)
-                       "                  ")
-                  substrs (mapcat #(add-only-first-str "|" (fname-str (first %)) (add-newline (second %))) (second ss))]
-              (add-only-first-str "|" ds substrs)))]
-    (map #(subf %) clgs)))
+                       "                  ")]
+              (->> ss
+                   (mapcat #(add-only-first-str "|" (fname-str (:filename %)) (:log %)))
+                   (add-only-first-str "|" ds)
+                   (map #(str % "\n")))))]
+    (mapcat #(subf %) (partition-by :timestamp clgs))))
 
 (defn file->style
   [fname]
@@ -77,5 +79,5 @@
       (println (apply str (interpose "\n" no-files)))
       (System/exit 1))
     (with-open [w (writer System/out :encoding clogs-writer-encoding)]
-      (let [s (apply str (flatten (file-seq->clogs-strs args :encoding clogs-reader-encoding)))]
+      (let [s (apply str (file-seq->clogs-strs args :encoding clogs-reader-encoding))]
         (.write w s)))))
