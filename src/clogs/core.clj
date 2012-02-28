@@ -79,5 +79,5 @@
       (println (apply str (interpose "\n" no-files)))
       (System/exit 1))
     (with-open [w (writer System/out :encoding clogs-writer-encoding)]
-      (let [s (apply str (file-seq->clogs-strs args :encoding clogs-reader-encoding))]
+      (doseq [s (file-seq->clogs-strs args :encoding clogs-reader-encoding)]
         (.write w s)))))
